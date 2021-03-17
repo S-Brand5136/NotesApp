@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Form from "./Form";
-import SearchBar from "./SearchBar";
 import { Box, Button, Grid, makeStyles, Typography } from "@material-ui/core";
 import { AddCircle } from "@material-ui/icons";
 
@@ -8,6 +7,10 @@ const useStyles = makeStyles({
   root: {
     marginTop: "2rem",
     marginBottom: "2rem",
+  },
+  btnText: {
+    marginRight: "5px",
+    fontWeight: "700",
   },
 });
 
@@ -40,8 +43,10 @@ const Header = ({ setLoading, loading }) => {
           xs={12}
           md={6}
         >
-          <SearchBar />
           <Button color="primary" size="large" onClick={handleOpen}>
+            <Typography variant="body1" className={classes.btnText}>
+              Add Note
+            </Typography>
             <AddCircle style={{ fontSize: "48px" }} />
           </Button>
         </Grid>

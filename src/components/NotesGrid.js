@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getNotes } from "../storageActions";
+import SearchBar from "./SearchBar";
 import Note from "./Note";
 import { Box, Grid, CircularProgress } from "@material-ui/core";
 
@@ -20,6 +21,9 @@ const NotesGrid = ({ loading }) => {
         <CircularProgress color="primary" />
       ) : (
         <Grid container spacing={2} direction="row" justify="center">
+          <Grid item>
+            <SearchBar />
+          </Grid>
           {notes.length <= 0 ? (
             <div>No notes have been made</div>
           ) : (

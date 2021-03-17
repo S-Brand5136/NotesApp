@@ -32,7 +32,7 @@ const SearchBar = () => {
 
   const search = (e) => {
     e.preventDefault();
-    console.log(getNotesByName(searchInput));
+    getNotesByName(searchInput);
     setSearchInput("");
   };
 

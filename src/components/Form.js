@@ -37,10 +37,12 @@ const Form = ({ open, handleClose, title, note }) => {
       onClose={handleClose}
       aria-labelledby="form-dialog"
     >
-      <DialogTitle id="form-dialog">Create a New Note</DialogTitle>
+      <DialogTitle id="form-dialog">
+        {title !== "" ? "Edit Note" : "Create a New Note"}
+      </DialogTitle>
       <DialogContent>
         <DialogContentText className={classes.dialogText}>
-          Enter a title for the new note
+          {title !== "" ? "Edit note title" : "Enter a title for the new note"}
         </DialogContentText>
         <TextField
           fullWidth
@@ -53,7 +55,7 @@ const Form = ({ open, handleClose, title, note }) => {
           value={noteTitle}
         />
         <DialogContentText className={classes.dialogText}>
-          Enter the note details
+          {title !== "" ? "Edit note details" : "Enter note details"}
         </DialogContentText>
         <TextField
           fullWidth
