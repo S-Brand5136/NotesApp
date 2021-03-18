@@ -7,7 +7,9 @@ export const getNotes = () => {
 export const getNotesByName = (title) => {
   const notesArray = getNotes();
 
-  return notesArray.filter((note) => note.title.includes(title));
+  return title === ""
+    ? notesArray
+    : notesArray.filter((note) => note.title.includes(title));
 };
 
 export const saveNote = (title, note) => {

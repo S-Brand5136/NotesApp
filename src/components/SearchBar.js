@@ -25,14 +25,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SearchBar = () => {
+const SearchBar = ({ searchReload, setSearchReload, setNotes }) => {
   const classes = useStyles();
 
   const [searchInput, setSearchInput] = useState("");
 
   const search = (e) => {
     e.preventDefault();
-    getNotesByName(searchInput);
+    setNotes(getNotesByName(searchInput));
+    setSearchReload(!searchReload);
     setSearchInput("");
   };
 
